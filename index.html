@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Global News Network | Uncovering Truth</title>
+    <title>Sosou News Network | Uncovering Truth</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -53,9 +53,11 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center gap-4">
-                    <span class="material-symbols-outlined text-primary text-3xl lg:hidden">menu</span>
+                    <button id="menuBtn" class="material-symbols-outlined text-primary text-3xl md:hidden">
+                        menu
+                    </button>
                     <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 uppercase">
-                        CNN<span class="text-primary">.</span></h1>
+                        SNN<span class="text-primary">.</span></h1>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a target="_blank" rel="noopener" class="text-sm font-semibold hover:text-primary transition-colors" href="https://edition.cnn.com/world">World</a>
@@ -74,6 +76,15 @@
                 </div>
             </div>
         </nav>
+
+        <div id="mobileMenu" class="hidden md:hidden border-t border-primary/10 bg-background-light dark:bg-background-dark">
+        <div class="flex flex-col px-6 py-4 space-y-4 text-sm font-semibold">
+        <a target="_blank" href="https://edition.cnn.com/world" class="hover:text-primary">World</a>
+        <a target="_blank" href="https://edition.cnn.com/politics" class="hover:text-primary">Politics</a>
+        <a target="_blank" href="https://edition.cnn.com/business/tech" class="hover:text-primary">Tech</a>
+        <a target="_blank" href="https://edition.cnn.com/science" class="hover:text-primary">Science</a>
+    </div>
+</div>
     </header>
     <main>
 
@@ -185,7 +196,7 @@
                     style="background-image: linear-gradient(to right, rgba(17, 22, 33, 0.9) 0%, rgba(17, 22, 33, 0) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8FPcoyjQm8dxnQs1NMXhQoftdj3oYSbezmI3A-ZsuJoXvmlbRdmHPY6Wdzi1TWqSudFe7fTPDTvyHAbnZ47ezruNgonuRSBkU11uB_FPHq1NJebrZC0uISrgGXyfwqhLu_UumJIJxZXCxaC-ikItGOgJpSOk039ARU0XSo1unsqnxskO8Y2Tufr1t_C2e4UPtJjvMXef00rluQRB7_u8UA_AftzgBgsh2KhFFT4mRdiDPQ8GAS1IIpqyVMDdgpSuOxQt4jOl6-ao');">
                 </div>
                 <div class="absolute inset-0 flex flex-col justify-center p-8 md:p-16 max-w-2xl">
-                    <span class="text-primary font-bold text-sm tracking-widest uppercase mb-4">CNN Originals</span>
+                    <span class="text-primary font-bold text-sm tracking-widest uppercase mb-4">SNN Originals</span>
                     <h3 class="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">The Climate Frontier:
                         Reporting from the Edge</h3>
                     <p class="text-slate-300 text-lg mb-8 line-clamp-3">
@@ -229,8 +240,8 @@
                                 </svg>
                             </span>
                             <div>
-                                <p class="font-semibold text-white">Subscription confirmed!</p>
-                                <p data-feedback-message class="text-slate-300">Thanks for joining our newsletter.</p>
+                                <p data-feedback-message1 class="font-semibold text-white"></p>
+                                <p data-feedback-message2 class="text-slate-300"></p>
                             </div>
                         </div>
                     </div>
@@ -238,7 +249,7 @@
                         Policy.</p>
                 </div>
                 <div class="lg:text-right">
-                    <h3 class="text-xl font-bold mb-6">Connect with CNN</h3>
+                    <h3 class="text-xl font-bold mb-6">Connect with SNN</h3>
                     <div class="flex lg:justify-end gap-4 mb-8">
                         <a class="size-12 bg-white/5 hover:bg-primary rounded-full flex items-center justify-center transition-all"
                             href="https://edition.cnn.com/">
@@ -258,16 +269,31 @@
                         </a>
                     </div>
                     <div class="space-y-2 text-slate-400 text-sm">
-                        <p>© 2026 Cable News Network. All Rights Reserved.</p>
+                        <p>© 2026 Souso News Network. All Rights Reserved.</p>
                         <p>123 News Plaza, Manhattan, New York</p>
-                        <p>Done by Souso</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="bg-slate-950 text-slate-500 py-6 border-t border-white/5">
+        <div
+            class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
+            <div class="flex gap-6">
+                <a class="hover:text-white" href="#">Privacy Policy</a>
+                <a class="hover:text-white" href="#">Terms of Use</a>
+                <a class="hover:text-white" href="#">Cookie Settings</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="size-2 bg-green-500 rounded-full animate-pulse"></div>
+                System Operational - 24/7 Global Feed
+            </div>
+        </div>
+    </footer>
+
     <script>
-        const newsletterForm = document.getElementById('newsletterForm');
+         const newsletterForm = document.getElementById('newsletterForm');
         const newsletterEmail = document.getElementById('newsletterEmail');
         const formFeedback = document.getElementById('formFeedback');
 
@@ -293,7 +319,8 @@
                         newsletterForm.reset();
                         formFeedback.classList.remove('hidden');
                         formFeedback.classList.remove('border-red-300', 'bg-red-900/30');
-                        formFeedback.querySelector('[data-feedback-message]').textContent = 'Thanks for joining our newsletter.';
+                        formFeedback.querySelector('[data-feedback-message1]').textContent = 'Subscription Successful!';
+                        formFeedback.querySelector('[data-feedback-message2]').textContent = 'Thanks for joining our newsletter.';
                     }, 2000)
                    
                     return;
@@ -305,30 +332,26 @@
                   setTimeout(() =>{
                     formFeedback.classList.remove('hidden');
                     formFeedback.classList.add('border-red-300', 'bg-red-900/30');
-                    formFeedback.querySelector('[data-feedback-message]').textContent = message;
+                    formFeedback.querySelector('[data-feedback-message1]').textContent = 'Subscription Failure!';
+                    formFeedback.querySelector('[data-feedback-message2]').textContent = message;
                 }, 2000)
             } catch (error) {
                 formFeedback.classList.remove('hidden');
                 formFeedback.classList.add('border-red-300', 'bg-red-900/30');
-                formFeedback.querySelector('[data-feedback-message]').textContent = 'Network error. Please try again.';
+                formFeedback.querySelector('[data-feedback-message1]').textContent = 'Subscription Failure!';
+                formFeedback.querySelector('[data-feedback-message2]').textContent = 'Network error. Please try again.';
             }
         });
-    </script>
 
-    <footer class="bg-slate-950 text-slate-500 py-6 border-t border-white/5">
-        <div
-            class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
-            <div class="flex gap-6">
-                <a class="hover:text-white" href="#">Privacy Policy</a>
-                <a class="hover:text-white" href="#">Terms of Use</a>
-                <a class="hover:text-white" href="#">Cookie Settings</a>
-            </div>
-            <div class="flex items-center gap-2">
-                <div class="size-2 bg-green-500 rounded-full animate-pulse"></div>
-                System Operational - 24/7 Global Feed
-            </div>
-        </div>
-    </footer>
+            // SIDEBAR
+            const menuBtn = document.getElementById("menuBtn");
+            const mobileMenu = document.getElementById("mobileMenu");
+
+            menuBtn.addEventListener("click", () => {
+                // alert("working")
+             mobileMenu.classList.toggle("hidden");
+            });
+    </script>
 </body>
 
 </html>
